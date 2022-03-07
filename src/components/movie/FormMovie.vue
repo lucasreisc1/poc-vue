@@ -45,12 +45,31 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-btn @click="save" >
+      Save
+    </v-btn>
+    <v-btn @click="cancel">
+      Cancel
+    </v-btn>
   </v-form>
 </template>
 
 <script>
 export default {
   name: 'FormMovie',
+
+  props: {
+    save: {
+      type: Function,
+      required: true,
+    },
+
+    cancel: {
+      type: Function,
+      required: true,
+    },
+  },
+
   data() {
     return {
       movie: {},

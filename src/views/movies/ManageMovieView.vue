@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <form-movie />
-  </div>
+  <v-flex class="pa-2" fill-height fluid>
+    <form-movie :save="() => {}" :cancel="() => {}" />
+  </v-flex>
 </template>
 
 <script>
