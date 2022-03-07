@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
+import { apolloProvider } from '@/infra/graphql/apollo-client';
 import vuetify from '@/plugins/vuetify';
 import App from './App.vue';
 import './registerServiceWorker';
@@ -15,5 +16,6 @@ new Vue({
   router,
   store,
   vuetify,
+  apolloProvider,
   render(h) { return h(App); },
 }).$mount('#app');
