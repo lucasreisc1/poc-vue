@@ -28,9 +28,7 @@ export default {
     }),
 
     cancel() {
-      // this.$router.push({ path: '/' });
-      this.showSuccesMessage('Teste');
-      // this.showErrorMessage('Error creating movie');
+      this.$router.push({ path: '/' });
     },
 
     async save(movie) {
