@@ -9,11 +9,18 @@ import FormMovie from '@/components/movie/FormMovie.vue';
 import { mapActions } from 'vuex';
 import { MOVIE_MODULE } from '@/store/movie/movieModule';
 import { MOVIE_ACTIONS } from '@/store/movie/movieActions';
+import notificationMixin from '@/mixin/util/notificationMixin';
 
 export default {
   name: 'ManageMovieView',
 
-  components: { FormMovie },
+  components: {
+    FormMovie,
+  },
+
+  mixins: [
+    notificationMixin,
+  ],
 
   methods: {
     ...mapActions(MOVIE_MODULE, {
@@ -21,15 +28,19 @@ export default {
     }),
 
     cancel() {
-      this.$router.push({ path: '/' });
+      // this.$router.push({ path: '/' });
+      this.showSuccesMessage('Teste');
+      // this.showErrorMessage('Error creating movie');
     },
 
     async save(movie) {
       try {
         await this.createMovie(movie);
         this.cancel();
+        this.showSuccesMessage('movie created successfully');
       } catch (error) {
-        console.log();
+        console.log(error);
+        this.showErrorMessage('Error creating movie');
       }
     },
   },

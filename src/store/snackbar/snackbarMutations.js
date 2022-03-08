@@ -1,24 +1,23 @@
 export const SNACKBAR_MUTATIONS = {
-  SHOW_NOTIFICATION_SUCCESS: 'SHOW_NOTIFICATION_SUCCESS',
-  SHOW_NOTIFICATION_ERROR: 'SHOW_NOTIFICATION_ERROR',
-  HIDE_NOTIFICATION: 'HIDE_NOTIFICATION',
+  SHOW_SUCCESS_MESSAGE: 'SHOW_SUCCESS_MESSAGE',
+  SHOW_ERROR_MESSAGE: 'SHOW_ERROR_MESSAGE',
+  HIDE_MESSAGE: 'HIDE_MESSAGE',
 };
 
 export default {
 
-  [SNACKBAR_MUTATIONS.SHOW_NOTIFICATION_SUCCESS](state, payload) {
+  [SNACKBAR_MUTATIONS.SHOW_SUCCESS_MESSAGE](state, payload) {
     state.snackbar = true;
-    state.message = { text: payload, type: 'success' };
+    state.message = { text: payload, color: '#4CAF50', textButton: 'Ok' };
   },
 
-  [SNACKBAR_MUTATIONS.SHOW_NOTIFICATION_ERROR](state, payload) {
+  [SNACKBAR_MUTATIONS.SHOW_ERROR_MESSAGE](state, payload) {
     state.snackbar = true;
-    state.message = { text: payload, type: 'error' };
+    state.message = { text: payload, color: '#FF5252', textButton: 'Ok' };
   },
 
-  [SNACKBAR_MUTATIONS.HIDE_NOTIFICATION](state) {
+  [SNACKBAR_MUTATIONS.HIDE_MESSAGE](state) {
     state.snackbar = false;
-    state.message = { text: '', type: '' };
   },
 
 };

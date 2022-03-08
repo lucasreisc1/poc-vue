@@ -1,13 +1,14 @@
 <template>
   <div>
     <v-snackbar
-      v-model="haveMessage"
+      :value="haveMessage"
+      :color="message.color"
+      top
     >
       {{ message.text }}
 
       <template v-slot:action="{ attrs }">
         <v-btn
-          :color="message.type"
           text
           v-bind="attrs"
           @click="closeMessage"
@@ -36,7 +37,7 @@ export default {
 
   methods: {
     ...mapMutations(SNACKBAR_MODULE, {
-      closeMessage: SNACKBAR_MUTATIONS.HIDE_NOTIFICATION,
+      closeMessage: SNACKBAR_MUTATIONS.HIDE_MESSAGE,
     }),
   },
 

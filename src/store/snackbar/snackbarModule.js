@@ -7,7 +7,7 @@ const state = {
   snackbar: false,
   message: {
     text: '',
-    type: 'success',
+    color: '#FFC107',
     textButton: 'Ok',
   },
 };
