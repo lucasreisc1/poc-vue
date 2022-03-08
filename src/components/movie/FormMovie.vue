@@ -1,57 +1,61 @@
 <template>
-  <v-form v-model="valid">
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="4">
-          <v-text-field
-            v-model="movie.name"
-            :rules="nameRules"
-            label="Movie name"
-            required
-          ></v-text-field>
-        </v-col>
+  <v-card class="d-flex justify-center">
+    <v-form v-model="valid">
+      <v-container>
+        <v-row justify="space-between">
+          <v-col >
+            <v-text-field
+              v-model="movie.name"
+              :rules="nameRules"
+              label="Movie name"
+              required
+            ></v-text-field>
+          </v-col>
 
-        <v-col cols="12" md="4">
-          <v-text-field
-            v-model="movie.genre"
-            label="Genre"
-            required
-          ></v-text-field>
-        </v-col>
-      </v-row>
+          <v-col >
+            <v-text-field
+              v-model="movie.genre"
+              label="Genre"
+              required
+            ></v-text-field>
+          </v-col>
+        </v-row>
 
-      <v-row>
-        <v-col cols="12" md="4">
-          <v-text-field
-            v-model="movie.year"
-            label="Year"
-          ></v-text-field>
-        </v-col>
+        <v-row>
+          <v-col >
+            <v-text-field
+              v-model="movie.year"
+              label="Year"
+              type="number"
+            ></v-text-field>
+          </v-col>
 
-          <v-col cols="12" md="4">
+          <v-col>
             <v-text-field
               v-model="movie.imdbRating"
               label="Imdb Rating"
+              type="number"
             ></v-text-field>
           </v-col>
-      </v-row>
+        </v-row>
 
-      <v-row>
-        <v-col cols="12" md="8">
-          <v-text-field
-            v-model="movie.duration"
-            label="Duration"
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-btn @click="save" >
-      Save
-    </v-btn>
-    <v-btn @click="cancel">
-      Cancel
-    </v-btn>
-  </v-form>
+        <v-row>
+          <v-col>
+            <v-text-field
+              v-model="movie.duration"
+              label="Duration"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-btn @click="save(movie)" >
+        Save
+      </v-btn>
+      <v-btn @click="cancel">
+        Cancel
+      </v-btn>
+    </v-form>
+  </v-card>
 </template>
 
 <script>

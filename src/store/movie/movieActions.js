@@ -1,9 +1,11 @@
 import movieQueries from '@/api/movie/movieQueries';
 import { MOVIE_MUTATIONS } from '@/store/movie/movieMutations';
 import { apolloClient } from '@/infra/graphql/apollo-client';
+import movieMutations from '@/api/movie/movieMutations';
 
 export const MOVIE_ACTIONS = {
   FIND_ALL_MOVIES: 'FIND_ALL_MOVIES',
+  CREATE_MOVIE: 'CREATE_MOVIE',
 };
 
 export default {
@@ -14,6 +16,19 @@ export default {
     context.commit(MOVIE_MUTATIONS.UPDATE_MOVIES, data.movies);
 
     return data;
+  },
+
+  async [MOVIE_ACTIONS.CREATE_MOVIE](context, payload) {
+    return apolloClient.mutate({
+      mutation: movieMutations.CREATE_MOVIE,
+      variables: {
+        input: {
+          ...payload,
+          year: +payload.year,
+          imdbRating: parseFloat(payload.imdbRating),
+        },
+      },
+    });
   },
 
 };

@@ -7,7 +7,7 @@
 
       <template v-slot:action="{ attrs }">
         <v-btn
-          color=""
+          :color="message.type"
           text
           v-bind="attrs"
           @click="closeMessage"

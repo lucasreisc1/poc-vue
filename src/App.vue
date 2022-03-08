@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <snackbar-notification />
+    <v-system-bar height="30" color="#007BFF"></v-system-bar>
     <router-view/>
   </div>
 </template>
@@ -26,3 +28,10 @@ nav {
   }
 }
 </style>
+<script>
+import SnackbarNotification from '@/components/util/SnackbarNotification.vue';
+
+export default {
+  components: { SnackbarNotification },
+};
+</script>
