@@ -16,4 +16,8 @@ export default {
   isString(str) {
     return str && typeof str === 'string';
   },
+
+  isNumber(number) {
+    return number && typeof number === 'number';
+  },
 };

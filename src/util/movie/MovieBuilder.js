@@ -6,12 +6,18 @@ export default class MovieBuilder {
   }
 
   setImdbRating(imdbRating) {
-    this.newMovie.imdbRating = util.convertStringToFloat(imdbRating);
+    this.newMovie.imdbRating = util.isNumber(imdbRating)
+      ? imdbRating
+      : util.convertStringToFloat(imdbRating);
+
     return this;
   }
 
   setYear(year) {
-    this.newMovie.year = util.convertStringToNumber(year);
+    this.newMovie.year = util.isNumber(year)
+      ? year
+      : util.convertStringToNumber(year);
+
     return this;
   }
 

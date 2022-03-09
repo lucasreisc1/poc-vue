@@ -93,4 +93,33 @@ describe('util', () => {
       expect(isString).toBeFalsy();
     });
   });
+
+  describe('isNumber', () => {
+    it('check a number type parameter -> true', () => {
+      // setup:
+      const validNumber = 123.0;
+      // execute:
+      const isString = util.isNumber(validNumber);
+      // verify:
+      expect(isString).toBeTruthy();
+    });
+
+    it('check a null type parameter -> false ', () => {
+      // setup:
+      const nullParameter = null;
+      // execute:
+      const isString = util.isNumber(nullParameter);
+      // verify:
+      expect(isString).toBeFalsy();
+    });
+
+    it('check a undefined type parameter -> false ', () => {
+      // setup:
+      const undefinedParameter = undefined;
+      // execute:
+      const isString = util.isNumber(undefinedParameter);
+      // verify:
+      expect(isString).toBeFalsy();
+    });
+  });
 });
