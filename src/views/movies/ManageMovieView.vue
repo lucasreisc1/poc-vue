@@ -35,10 +35,10 @@ export default {
       try {
         await this.createMovie(movie);
         this.cancel();
-        this.showSuccesMessage('movie created successfully');
+        this.showSuccesMessage('Movie created successfully.');
       } catch (error) {
         console.log(error);
-        this.showErrorMessage('Error creating movie');
+        this.showErrorMessage('Error creating movie.');
       }
     },
   },

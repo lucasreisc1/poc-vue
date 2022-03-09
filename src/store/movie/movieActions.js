@@ -2,6 +2,7 @@ import movieQueries from '@/api/movie/movieQueries';
 import { MOVIE_MUTATIONS } from '@/store/movie/movieMutations';
 import { apolloClient } from '@/infra/graphql/apollo-client';
 import movieMutations from '@/api/movie/movieMutations';
+import MovieBuilder from '@/util/MovieBuilder';
 
 export const MOVIE_ACTIONS = {
   FIND_ALL_MOVIES: 'FIND_ALL_MOVIES',
@@ -19,15 +20,14 @@ export default {
   },
 
   async [MOVIE_ACTIONS.CREATE_MOVIE](context, payload) {
+    const movie = new MovieBuilder(payload)
+      .setImdbRating(payload.imdbRating)
+      .setYear(payload.year)
+      .build();
+
     return apolloClient.mutate({
       mutation: movieMutations.CREATE_MOVIE,
-      variables: {
-        input: {
-          ...payload,
-          year: +payload.year,
-          imdbRating: parseFloat(payload.imdbRating),
-        },
-      },
+      variables: { input: { ...movie } },
     });
   },
 
