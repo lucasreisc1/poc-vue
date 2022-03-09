@@ -1,8 +1,8 @@
-import movieQueries from '@/api/movie/movieQueries';
+import movieQueries from '@/graphql/movie/movieQueries';
 import { MOVIE_MUTATIONS } from '@/store/movie/movieMutations';
 import { apolloClient } from '@/infra/graphql/apollo-client';
-import movieMutations from '@/api/movie/movieMutations';
-import MovieBuilder from '@/util/MovieBuilder';
+import movieMutations from '@/graphql/movie/movieMutations';
+import MovieBuilder from '@/util/movie/MovieBuilder';
 
 export const MOVIE_ACTIONS = {
   FIND_ALL_MOVIES: 'FIND_ALL_MOVIES',
