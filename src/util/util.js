@@ -1,15 +1,19 @@
 export default {
   convertStringToNumber(str) {
-    if (typeof str === 'string') {
+    if (this.isString(str)) {
       return +str;
     }
-    throw Error('Invalid type param');
+    throw new Error('You must provide a string.');
   },
 
   convertStringToFloat(str) {
-    if (typeof str === 'string') {
+    if (this.isString(str)) {
       return parseFloat(str);
     }
-    throw Error('Invalid type param');
+    throw new Error('You must provide a string.');
+  },
+
+  isString(str) {
+    return str && typeof str === 'string';
   },
 };

@@ -10,6 +10,7 @@ export default {
         year
         genre
         duration
+        imdbRating
       }
     }
   `,
