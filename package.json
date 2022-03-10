@@ -7,20 +7,17 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "mocks" : "mocks-server"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
-    "apollo-client": "^2.6.10",
-    "apollo-link": "^1.2.14",
-    "apollo-link-http": "^1.5.17",
     "graphql": "^15.8.0",
     "graphql-tag": "^2.12.6",
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "*",
+    "unfetch": "^4.2.0",
     "vue": "^2.6.14",
     "vue-apollo": "^3.1.0",
     "vue-router": "^3.5.1",

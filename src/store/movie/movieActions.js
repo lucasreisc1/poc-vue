@@ -15,8 +15,6 @@ export default {
     const { data } = await apolloClient.query({ query: movieQueries.GET_ALL_MOVIES_QUERY });
 
     context.commit(MOVIE_MUTATIONS.UPDATE_MOVIES, data.movies);
-
-    return data;
   },
 
   async [MOVIE_ACTIONS.CREATE_MOVIE](context, payload) {

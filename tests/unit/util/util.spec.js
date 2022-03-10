@@ -26,42 +26,13 @@ describe('util', () => {
       expect(exception.message).toBe('You must provide a string.');
     });
 
-    it('pass undefined parameter returns exception', () => {
+    it('pass not a number parameter and returns NaN', () => {
       // setup:
-      let exception;
+      const str = 'abc';
       // execute:
-      try {
-        util.convertStringToNumber();
-      } catch (err) {
-        exception = err;
-      }
+      const notANumber = util.convertStringToNumber(str);
       // verify:
-      expect(exception.message).toBe('You must provide a string.');
-    });
-  });
-
-  describe('convertStringToFloat', () => {
-    it('convert a valid param string to float', () => {
-      // setup:
-      const param = '10.3';
-      // execute:
-      const newFloat = util.convertStringToFloat(param);
-      // verify:
-      expect(typeof newFloat === 'number').toBeTruthy();
-      expect(newFloat).toBe(10.3);
-    });
-
-    it('pass null parameter returns exception', () => {
-      // setup:
-      let exception;
-      // execute:
-      try {
-        util.convertStringToFloat(null);
-      } catch (err) {
-        exception = err;
-      }
-      // verify:
-      expect(exception.message).toBe('You must provide a string.');
+      expect(notANumber).toBe(NaN);
     });
   });
 

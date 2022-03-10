@@ -8,7 +8,7 @@ export default class MovieBuilder {
   setImdbRating(imdbRating) {
     this.newMovie.imdbRating = util.isNumber(imdbRating)
       ? imdbRating
-      : util.convertStringToFloat(imdbRating);
+      : util.convertStringToNumber(imdbRating);
 
     return this;
   }
