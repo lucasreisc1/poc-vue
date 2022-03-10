@@ -6,7 +6,10 @@ export function storeMovie(state) {
   Vue.use(Vuex);
   return new Vuex.Store({
     modules: {
-      [MOVIE_MODULE]: { ...movieModule, state },
+      [MOVIE_MODULE]: {
+        ...movieModule,
+        state,
+      },
     },
   });
 }
