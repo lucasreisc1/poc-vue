@@ -1,8 +1,11 @@
 <template>
   <div>
     <data-table-movie :movies="movies"/>
-
-    <v-btn class="mx-2" fab @click="createNewMovie">
+    <v-btn
+      data-test-movie="btn-new-movie"
+      class="mx-2"
+      fab
+      @click="createNewMovie">
       <v-icon dark>
         mdi-plus
       </v-icon>

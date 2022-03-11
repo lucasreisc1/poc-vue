@@ -5,6 +5,7 @@
       :value="haveMessage"
       :color="message.color"
       top
+      :timeout="-1"
     >
       <p data-test-snackbar="text-message">{{ message.text }}</p>
 

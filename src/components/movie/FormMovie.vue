@@ -9,6 +9,7 @@
               :rules="nameRules"
               label="Movie name"
               required
+              data-test-form-movie="input-name"
             ></v-text-field>
           </v-col>
 
@@ -17,6 +18,7 @@
               v-model="movie.genre"
               label="Genre"
               required
+              data-test-form-movie="input-genre"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -27,6 +29,7 @@
               v-model="movie.year"
               label="Year"
               type="number"
+              data-test-form-movie="input-year"
             ></v-text-field>
           </v-col>
 
@@ -35,6 +38,7 @@
               v-model="movie.imdbRating"
               label="Imdb Rating"
               type="number"
+              data-test-form-movie="input-imdb-rating"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -44,14 +48,21 @@
             <v-text-field
               v-model="movie.duration"
               label="Duration"
+              data-test-form-movie="input-duration"
             ></v-text-field>
           </v-col>
         </v-row>
       </v-container>
-      <v-btn @click="save(movie)" >
+      <v-btn
+        data-test-form-movie="btn-save"
+        @click="save(movie)"
+      >
         Save
       </v-btn>
-      <v-btn @click="cancel">
+      <v-btn
+        data-test-form-movie="btn-cancel"
+        @click="cancel"
+      >
         Cancel
       </v-btn>
     </v-form>

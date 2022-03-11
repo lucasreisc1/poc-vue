@@ -3,16 +3,19 @@
     <v-simple-table>
       <template v-slot:default>
         <thead>
-        <tr>
-          <th class="text-left"> Name </th>
-          <th class="text-left"> Genre </th>
-          <th class="text-left"> Imdb Rating </th>
-          <th class="text-left"> Duration </th>
-          <th class="text-left"> Year </th>
+        <tr data-test-table-movie="tr-row-header">
+          <th> Name </th>
+          <th> Genre </th>
+          <th> Imdb Rating </th>
+          <th> Duration </th>
+          <th> Year </th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="item in movies" :key="item.id" >
+        <tr
+          data-test-table-movie="tr-row-data"
+          v-for="item in movies"
+          :key="item.id">
           <td>{{ item.name }}</td>
           <td>{{ item.genre }}</td>
           <td>{{ item.imdbRating }}</td>
