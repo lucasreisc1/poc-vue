@@ -3,7 +3,7 @@ import MovieTestHelper from '../../test-helper/movie/MovieTestHelper';
 
 describe('MovieBuilder', () => {
   describe('setImdbRating', () => {
-    it('with number type parameter', () => {
+    it('With number type parameter', () => {
       // setup:
       const movie = MovieTestHelper.movie();
       const imdbRating = 10;
@@ -13,7 +13,7 @@ describe('MovieBuilder', () => {
       expect(newMovie.imdbRating).toBe(imdbRating);
     });
 
-    it('with string type parameter', () => {
+    it('With string type parameter', () => {
       // setup:
       const movie = MovieTestHelper.movie();
       const imdbRating = '10.0';
@@ -25,7 +25,7 @@ describe('MovieBuilder', () => {
   });
 
   describe('setYear', () => {
-    it('with number type parameter', () => {
+    it('With number type parameter', () => {
       // setup:
       const movie = MovieTestHelper.movie();
       const year = 2000;
@@ -35,7 +35,7 @@ describe('MovieBuilder', () => {
       expect(newMovie.year).toBe(year);
     });
 
-    it('with string type parameter', () => {
+    it('With string type parameter', () => {
       // setup:
       const movie = MovieTestHelper.movie();
       const year = '1996';

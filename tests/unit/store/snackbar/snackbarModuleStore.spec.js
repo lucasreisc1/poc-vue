@@ -1,7 +1,7 @@
 import { SNACKBAR_MODULE } from '@/store/snackbar/snackbarModule';
 import { SNACKBAR_MUTATIONS } from '@/store/snackbar/snackbarMutations';
 import { SNACKBAR_GETTERS } from '@/store/snackbar/snackbarGetters';
-import storeSnackbar from './SnackbarStoreTestHelper';
+import { storeSnackbar } from './SnackbarStoreTestHelper';
 
 describe('snackbarStore', () => {
   describe('SNACKBAR_MUTATIONS', () => {
@@ -34,7 +34,7 @@ describe('snackbarStore', () => {
 
   describe('SNACKBAR_GETTERS', () => {
     describe('HAVE_MESSAGE', () => {
-      it('returns true when a message is displayed', () => {
+      it('Returns true when a message is displayed', () => {
         // setup:
         const store = storeSnackbar();
         // execute:
@@ -44,7 +44,7 @@ describe('snackbarStore', () => {
         expect(isHaveMessage).toBeTruthy();
       });
 
-      it('returns false when a message is displayed and then removed', () => {
+      it('Returns false when a message is displayed and then removed', () => {
         // setup:
         // setup:
         const store = storeSnackbar();

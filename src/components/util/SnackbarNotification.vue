@@ -1,21 +1,21 @@
 <template>
   <div>
     <v-snackbar
+      data-test-snackbar="wrapper"
       :value="haveMessage"
       :color="message.color"
       top
     >
-      {{ message.text }}
+      <p data-test-snackbar="text-message">{{ message.text }}</p>
 
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          text
-          v-bind="attrs"
-          @click="closeMessage"
-        >
-          {{ message.textButton }}
-        </v-btn>
-      </template>
+    <v-btn
+      id="btnCloseMessage"
+      data-test-snackbar="btn-close-message"
+      text
+      @click="closeMessage"
+    >
+      {{ message.textButton }}
+    </v-btn>
     </v-snackbar>
   </div>
 </template>
