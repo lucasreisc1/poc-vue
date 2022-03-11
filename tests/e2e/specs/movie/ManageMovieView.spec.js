@@ -10,8 +10,11 @@ describe('ManageMovieView', () => {
     cy.get('[data-test-form-movie="input-year"]').type('2019').should('have.value', '2019');
     cy.get('[data-test-form-movie="input-imdb-rating"]').type('8.5').should('have.value', '8.5');
     cy.get('[data-test-form-movie="input-duration"]').type('2h 12m').should('have.value', '2h 12m');
-
     cy.get('[data-test-form-movie="btn-save"]').click();
-    cy.get('[data-test-snackbar="wrapper"]').should('exist');
+
+    cy.get('[data-test-snackbar="btn-close-message"]').click();
+    cy.get('[data-test-snackbar="wrapper"]').should('not.be.visible');
+
+    cy.url().should('include', '/');
   });
 });
