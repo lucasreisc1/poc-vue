@@ -1,34 +1,56 @@
 # poc-vue
 
-## Project setup
-```
-npm install
-```
+<p>A POC tem como objetivo cria exemplos de testes unitários e e2e.</p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Custodiante: Image Recognition
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your unit tests
+# Links
+- [Local](http://localhost:8080)
+- [Cypress](https://www.cypress.io/)
+- [Jest](https://jestjs.io/)
+- [Vue Test Utils](https://v1.test-utils.vuejs.org/)
+
+## Pre requisitos para execução da POC local
+
+É necessario instalar as seguintes ferramentas para executar a POC localmente:
+
+* [Node](https://nodejs.org/en/download/)
+* [Mock Server](https://www.npmjs.com/package/mock-json-server)
+  * `` npm install -g mock-json-server ``
+
+
+### Rodar testes
+
+#### Teste Unitários
 ```
 npm run test:unit
 ```
 
-### Run your end-to-end tests
+#### Testes end-to-end
+
+Prmeiro rode stub serve
+```
+mock-json-server tests/e2e/stubs/stub.json --port=4000
+
+or
+
+npm run stub:serve
+```
+<i>É necessário instalar ``mock-json-server``.</i>
+
+Depois 
 ```
 npm run test:e2e
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Padrão de testes utlizados
+
+* [XUnit Test Patterns - Four Phase Test](http://xunitpatterns.com/Four%20Phase%20Test.html)
+* [XUnit Test Patterns - Creation Method](http://xunitpatterns.com/Creation%20Method.html)
+
+
+
